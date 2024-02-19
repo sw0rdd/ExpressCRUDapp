@@ -1,15 +1,26 @@
 import express from 'express'
 import logger from 'morgan'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
-const app = express()
+dotenv.config();
 
-app.set('view engine', 'ejs')
+const app = express();
 
-app.use(logger('dev'))
-app.use(express.static('public'))
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => {
+  console.log('Connected to MongoDB...')
+}).catch((err) => {
+  console.log('Error connecting to MongoDB', err)
+})
+
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.static('public'));
 
 app.get('/he', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World from docker again again!')
 })
 
 
