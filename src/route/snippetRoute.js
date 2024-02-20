@@ -1,8 +1,8 @@
-import express from "../express";
+import express from "express";
 
 const snippetRouter = express.Router();
 
-import * as snippetController from "../controller/snippetController";
+import * as snippetController from "../controller/snippetController.js";
 
 function isAuthenticated(req, res, next) {
     if (req.session.user) {

@@ -7,7 +7,7 @@ import Snippet from "../model/snippet.js";
  * @param {object} req - request object 
  * @param {object} res - response object 
  */
-export const showSnippets = async (req, res) => {
+export const getAllSnippets = async (req, res) => {
     try {
         const snippets = await Snippet.find().populate('user', 'username');
         res.render('snippets/index', {snippets})
@@ -36,15 +36,17 @@ export const createSnippetForm = async (req, res) => {
 export const createSnippet = async (req, res) => {
     const {title, content} = req.body;
     try {
-        const newSnippet = await Snippet.create({
+        await Snippet.create({
             title,
             content,
             user: req.session.user._id
         });
-        res.redirect('/snippets')
+        req.flash('success', 'Snippet created successfully!');
+        res.redirect('/snippets');
     } catch (error) {
-        console.error('Error creating snippet: ', error);
-        res.status(500).send('Internal server error')
+        console.error('Error creating snippet:', error);
+        req.flash('error', 'Error creating snippet.');
+        res.redirect('/snippets/create');
     } 
 };
 
@@ -83,18 +85,22 @@ export const updateSnippet = async (req, res) => {
     try {
         const snippet = await Snippet.findById(req.params.id);
         if (!snippet) {
-            return res.status(404).send('Snippet not found')
+            req.flash('error', 'Snippet not found.');
+            return res.redirect('/snippets');
         }
         if (snippet.user.toString() !== req.session.user._id.toString()) {
-            return res.status(403).send('You are not authorized to edit this snippet')
+            req.flash('error', 'You are not authorized to edit this snippet.');
+            return res.redirect('/snippets');
         }
         snippet.title = title;
         snippet.content = content;
         await snippet.save();
-        res.redirect('/snippets')
+        req.flash('success', 'Snippet updated successfully!');
+        res.redirect('/snippets');
     } catch (error) {
-        console.error('Error updating snippet: ', error);
-        res.status(500).send('Internal server error')
+        console.error('Error updating snippet:', error);
+        req.flash('error', 'Error updating snippet.');
+        res.redirect(`/snippets/edit/${req.params.id}`);
     }
 };
 
@@ -109,15 +115,19 @@ export const deleteSnippet = async (req, res) => {
     try {
         const snippet = await Snippet.findById(req.params.id);
         if (!snippet) {
-            return res.status(404).send('Snippet not found')
+            req.flash('error', 'Snippet not found.');
+            return res.redirect('/snippets');
         }
         if (snippet.user.toString() !== req.session.user._id.toString()) {
-            return res.status(403).send('You are not authorized to delete this snippet')
+            req.flash('error', 'You are not authorized to delete this snippet.');
+            return res.redirect('/snippets');
         }
         await snippet.remove();
-        res.redirect('/snippets')
+        req.flash('success', 'Snippet deleted successfully!');
+        res.redirect('/snippets');
     } catch (error) {
-        console.error('Error deleting snippet: ', error);
-        res.status(500).send('Internal server error')
+        console.error('Error deleting snippet:', error);
+        req.flash('error', 'Error deleting snippet.');
+        res.redirect('/snippets');
     }
 };

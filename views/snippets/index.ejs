@@ -1,0 +1,14 @@
+<h2>Snippets</h2>
+<a href="/snippets/create">Create New Snippet</a>
+<ul>
+    <% snippets.forEach(function(snippet) { %>
+        <li>
+            <h3><%= snippet.title %></h3>
+            <p><%= snippet.content %></p>
+            <a href="/snippets/edit/<%= snippet._id %>">Edit</a>
+            <form method="POST" action="/snippets/delete/<%= snippet._id %>?_method=DELETE">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    <% }); %>
+</ul>

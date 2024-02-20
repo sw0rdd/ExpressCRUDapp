@@ -1,0 +1,19 @@
+<header>
+    <h1>Welcome to Snippet Manager</h1>
+    <% if (user) { %>
+        <h2><%= user.username %></h2> 
+    <% } %>
+    <nav>
+        <ul>
+            <li><a href="/snippets">Snippets</a></li>
+            <li><a href="/users">Users</a></li>
+            <li><a href="/">Home</a></li>
+            <% if (!user) { %>
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/register">Register</a></li>
+            <% } else { %>
+                <li><a href="/users/logout">Logout</a></li>
+            <% } %>
+        </ul>
+    </nav>
+</header>

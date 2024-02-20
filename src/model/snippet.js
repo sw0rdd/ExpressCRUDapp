@@ -18,6 +18,6 @@ const snippetSchema = new mongoose.Schema({
 },  { timestamps: true });
 
 
-module.exports = mongoose.model('Snippet', snippetSchema);
+export default mongoose.model('Snippet', snippetSchema);
 
 
