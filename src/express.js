@@ -6,6 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config();
 
 const app = express();
+app.set('view engine', 'ejs');
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
@@ -14,10 +15,10 @@ mongoose.connect(process.env.MONGODB_URI)
   console.log('Error connecting to MongoDB', err)
 })
 
-app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.static('public'));
+app.use(express.json());
 
 app.get('/he', (req, res) => {
   res.send('Hello World from docker again again!')
