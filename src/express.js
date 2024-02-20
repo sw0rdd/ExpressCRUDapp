@@ -2,6 +2,8 @@ import express from 'express'
 import logger from 'morgan'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import expressLayout from 'express-ejs-layouts'
+import methodOverride from 'method-override'
 
 dotenv.config();
 
@@ -19,6 +21,10 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use(logger('dev'));
 app.use(express.static('public'));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.set('layout', 'layouts/layout');
+app.use(expressLayout);
+app.use(methodOverride('_method'));
 
 app.get('/he', (req, res) => {
   res.send('Hello World from docker again again!')
