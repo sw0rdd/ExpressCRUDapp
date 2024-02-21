@@ -122,7 +122,10 @@ export const deleteSnippet = async (req, res) => {
             req.flash('error', 'You are not authorized to delete this snippet.');
             return res.redirect('/snippets');
         }
-        await snippet.remove();
+        
+        // Use deleteOne instead of remove
+        await Snippet.deleteOne({ _id: snippet._id });
+
         req.flash('success', 'Snippet deleted successfully!');
         res.redirect('/snippets');
     } catch (error) {

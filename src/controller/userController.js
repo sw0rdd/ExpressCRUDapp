@@ -86,8 +86,7 @@ export const handleLogin = async (req, res) => {
                 return res.redirect('/');
             });
         } else {
-            console.log('Invalid username or password');
-            req.flash('error', 'Invalid username or password');
+            req.flash('error', 'Invalid username or passWord');
             res.redirect('/users/login');
         }
     } catch (error) {

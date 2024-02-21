@@ -5,10 +5,13 @@
         <li>
             <h3><%= snippet.title %></h3>
             <p><%= snippet.content %></p>
-            <a href="/snippets/edit/<%= snippet._id %>">Edit</a>
-            <form method="POST" action="/snippets/delete/<%= snippet._id %>?_method=DELETE">
-                <button type="submit">Delete</button>
-            </form>
+            <% if (user && snippet.user._id.toString() === user._id.toString()) { %>
+                <a href="/snippets/edit/<%= snippet._id %>">Edit</a>
+                <form method="POST" action="/snippets/delete/<%= snippet._id %>?_method=DELETE">
+                    <button type="submit">Delete</button>
+                </form>
+            <% } %>
+            <p>Created by: <%= snippet.user.username %></p>
         </li>
     <% }); %>
 </ul>
