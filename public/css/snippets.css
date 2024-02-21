@@ -1,0 +1,91 @@
+.snippets-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.snippets-table th, .snippets-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.snippets-table th {
+    background-color: #f2f2f2;
+}
+
+.snippet-content {
+    max-height: 100px; /* Adjust based on your preference */
+    overflow-y: auto;
+}
+
+.create-button {
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.create-button a {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+form {
+    display: inline;
+}
+
+.actions-container {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+    margin: 5px;
+}
+
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    margin: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #da190b;
+}
+
+
+.create-snippet-btn {
+    display: inline-block;
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.create-snippet-btn:hover {
+    background-color: #45a049;
+}

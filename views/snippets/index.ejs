@@ -1,17 +1,38 @@
-<h2>Snippets</h2>
-<a href="/snippets/create">Create New Snippet</a>
-<ul>
-    <% snippets.forEach(function(snippet) { %>
-        <li>
-            <h3><%= snippet.title %></h3>
-            <p><%= snippet.content %></p>
-            <% if (user && snippet.user._id.toString() === user._id.toString()) { %>
-                <a href="/snippets/edit/<%= snippet._id %>">Edit</a>
-                <form method="POST" action="/snippets/delete/<%= snippet._id %>?_method=DELETE">
-                    <button type="submit">Delete</button>
-                </form>
-            <% } %>
-            <p>Created by: <%= snippet.user.username %></p>
-        </li>
-    <% }); %>
-</ul>
+<table class="snippets-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Snippet</th>
+            <% if (user) { %><th>Actions</th><% } %>
+            <th>Owner</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% snippets.forEach(function(snippet) { %>
+            <tr>
+                <td><%= snippet.title %></td>
+                <td class="snippet-content"><%= snippet.content %></td>
+                <!-- Conditionally display Snippet Actions if a user is logged in -->
+                <% if (user) { %>
+                    <td class="snippet-actions">
+                        <% if (snippet.user._id.toString() === user._id.toString()) { %>
+                            <div class="actions-container">
+                                <a href="/snippets/edit/<%= snippet._id %>" class="btn edit-btn">Edit</a>
+                                <form method="POST" action="/snippets/delete/<%= snippet._id %>?_method=DELETE">
+                                    <button type="submit" class="btn delete-btn">Delete</button>
+                                </form>
+                            </div>
+                        <% } %>
+                    </td>
+                <% } %>
+                <td><%= snippet.user.username %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<% if (user) { %>
+    <div class="create-button">
+        <a href="/snippets/create" class="create-snippet-btn">Create New Snippet</a>
+    </div>
+<% } %>

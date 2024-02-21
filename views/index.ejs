@@ -3,3 +3,11 @@
     <h1>Welcome to the Homepage</h1>
     <p>This is the content of your homepage.</p>
 </div>
+
+<% if (messages.success) { %>
+    <div style="color: green;">
+        <% messages.success.forEach(function(message) { %>
+            <p><%= message %></p>
+        <% }); %>
+    </div>
+<% } %>

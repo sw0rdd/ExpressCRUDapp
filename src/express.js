@@ -35,9 +35,9 @@ app.use(session({
 app.use(flash());
 
 app.use((req, res, next) => {
-  res.locals.messages = req.flash();
+  res.locals.messages = req.flash(); 
   res.locals.user = req.session.user;
-  console.log(req.session.user)
+  console.log('Current user session:', req.session.user); 
   next();
 });
 
