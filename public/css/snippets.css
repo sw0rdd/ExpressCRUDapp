@@ -40,7 +40,7 @@ form {
 .actions-container {
     display: flex;
     /* flex-direction: column; */
-    justify-content: space-between;
+    /* justify-content: space-around; */
 }
 
 .btn {
@@ -88,4 +88,95 @@ form {
 
 .create-snippet-btn:hover {
     background-color: #45a049;
+}
+
+
+
+/** create snippet form **/
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.snippet-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Adjust width as needed */
+}
+
+.snippet-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.snippet-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.snippet-form input[type="text"],
+.snippet-form textarea {
+    width: calc(100% - 20px); /* Adjust input width */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.snippet-form textarea {
+    height: 150px; /* Initial height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.snippet-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.snippet-form button:hover {
+    background-color: #45a049;
+}
+
+
+.snippet-form textarea {
+    width: calc(100% - 20px); /* Adjust input width */
+    height: 150px; /* Initial height, make it scrollable as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.cancel-link {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ccc;
+    color: #333;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cancel-link:hover {
+    background-color: #bbb;
+}
+
+.no-snippets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
 }
