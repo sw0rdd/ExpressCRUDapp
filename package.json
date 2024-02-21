@@ -40,7 +40,8 @@
     "eslint-plugin-jsdoc": "^46.10.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "stylelint-config-recommended": "^14.0.0"
   },
   "eslintConfig": {
     "extends": "@lnu"

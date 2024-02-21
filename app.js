@@ -1,6 +1,6 @@
-import app from './src/express.js';
-import dotenv from 'dotenv';
+import app from './src/express.js'
+import dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config()
 
-app();
+app()

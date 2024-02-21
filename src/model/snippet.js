@@ -1,23 +1,19 @@
-import mongoose from "mongoose";
-
+import mongoose from 'mongoose'
 
 const snippetSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true
-    },
-    content: {
-        type: String,
-        required: true
-    },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
-},  { timestamps: true });
+  title: {
+    type: String,
+    required: true
+  },
+  content: {
+    type: String,
+    required: true
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  }
+}, { timestamps: true })
 
-
-export default mongoose.model('Snippet', snippetSchema);
-
-
+export default mongoose.model('Snippet', snippetSchema)

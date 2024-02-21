@@ -128,10 +128,6 @@ form {
     border-radius: 5px;
 }
 
-.snippet-form textarea {
-    height: 150px; /* Initial height */
-    overflow-y: auto; /* Enable vertical scrolling */
-}
 
 .snippet-form button {
     width: 100%;
