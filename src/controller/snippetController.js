@@ -7,14 +7,14 @@ import Snippet from '../model/snippet.js'
  */
 export const getAllSnippets = async (req, res) => {
   try {
-    const snippets = await Snippet.find().sort({ createdAt: -1 }).populate('user', 'username');
-    res.render('snippets/index', { snippets, user: req.session.user });
+    const snippets = await Snippet.find().sort({ createdAt: -1 }).populate('user', 'username')
+    res.render('snippets/index', { snippets, user: req.session.user })
   } catch (error) {
-    console.error('Error fetching snippets:', error);
-    req.flash('error', 'Error fetching snippets.');
-    res.redirect('/');
+    console.error('Error fetching snippets:', error)
+    req.flash('error', 'Error fetching snippets.')
+    res.redirect('/')
   }
-};
+}
 
 /**
  * display form to create a new snippet

@@ -23,13 +23,13 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use(session({
   cookie: {
-    maxAge: 86400000, // 24 hours for cookie expiration
-    secure: false, // No need for secure cookies in development
-    httpOnly: true // Helps mitigate the risk of client side script accessing the protected cookie
+    maxAge: 86400000, 
+    secure: false, 
+    httpOnly: true 
   },
-  resave: false, // Avoids resaving session if nothing changed
-  saveUninitialized: false, // Avoids saving uninitialized sessions
-  secret: 'keyboard cat' // A simple secret for session encoding
+  resave: false, 
+  saveUninitialized: false, 
+  secret: 'keyboard cat' 
 }))
 
 app.use(flash())
@@ -37,7 +37,6 @@ app.use(flash())
 app.use((req, res, next) => {
   res.locals.messages = req.flash()
   res.locals.user = req.session.user
-  console.log('Current user session:', req.session.user)
   next()
 })
 

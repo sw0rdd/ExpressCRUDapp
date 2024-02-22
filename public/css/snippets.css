@@ -14,7 +14,7 @@
 }
 
 .snippet-content {
-    max-height: 100px; /* Adjust based on your preference */
+    max-height: 100px; 
     overflow-y: auto;
 }
 
@@ -39,8 +39,6 @@ form {
 
 .actions-container {
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: space-around; */
 }
 
 .btn {
@@ -106,7 +104,7 @@ form {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px; /* Adjust width as needed */
+    max-width: 500px; 
 }
 
 .snippet-form h2 {
@@ -121,7 +119,7 @@ form {
 
 .snippet-form input[type="text"],
 .snippet-form textarea {
-    width: calc(100% - 20px); /* Adjust input width */
+    width: calc(100% - 20px); 
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -145,9 +143,9 @@ form {
 
 
 .snippet-form textarea {
-    width: calc(100% - 20px); /* Adjust input width */
-    height: 150px; /* Initial height, make it scrollable as needed */
-    overflow-y: auto; /* Enable vertical scrolling */
+    width: calc(100% - 20px); 
+    height: 150px; 
+    overflow-y: auto; 
 }
 
 .cancel-link {

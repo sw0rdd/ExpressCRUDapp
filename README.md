@@ -40,7 +40,7 @@ cp .env.example .env
 Start the application using npm:
 
 ```
-npm start
+npm start 
 
 ```
 Your application should now be running on http://localhost:3000.
@@ -48,7 +48,7 @@ Your application should now be running on http://localhost:3000.
 ## Using Docker
 
 Build and Run with Docker Compose<br>
-To build and run the application using Docker Compose, ensuring MongoDB is also started in a Docker container:
+To build and run the application using Docker Compose, ensuring MongoDB is also started in a Docker container
 
 ```
 docker-compose up --build

@@ -49,10 +49,10 @@ header p {
 .corner-button a {
     display: inline-block;
     color: white;
-    padding: 10px 20px; /* Standardized padding */
+    padding: 10px 20px; 
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s; 
 }
 
 

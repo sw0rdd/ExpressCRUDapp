@@ -34,7 +34,7 @@ export const handleRegister = async (req, res) => {
         req.flash('error', 'An error occurred during registration.')
         return res.redirect('/users/register')
       }
-      res.redirect('/snippets') 
+      res.redirect('/snippets')
     })
   } catch (error) {
     if (error.code === 11000) {

@@ -29,12 +29,12 @@
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
-    width: calc(100% - 20px); /* Account for padding */
+    width: calc(100% - 20px); 
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    display: block; /* Ensure inputs are not hidden */
+    display: block; 
 }
 
 .login-form button {
