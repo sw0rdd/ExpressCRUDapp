@@ -121,7 +121,7 @@ export const deleteSnippet = async (req, res) => {
     // Use deleteOne instead of remove
     await Snippet.deleteOne({ _id: snippet._id })
 
-    req.flash('success', 'Snippet deleted successfully!')
+    req.flash('successDelete', 'Snippet deleted successfully!')
     res.redirect('/snippets')
   } catch (error) {
     console.error('Error deleting snippet:', error)

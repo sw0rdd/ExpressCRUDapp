@@ -4,6 +4,18 @@
     </div>
 <% } %>
 
+
+<% if (messages.success && messages.success.length > 0) { %>
+    <% messages.success.forEach(function(message) { %>
+        <div class="snippet-alert"><%= message %></div>
+    <% }); %>
+<% } else if (messages.successDelete && messages.successDelete.length > 0) { %>
+    <% messages.successDelete.forEach(function(message) { %>
+        <div class="delete-alert"><%= message %></div>
+    <% }); %>
+<% } %>
+
+
 <% if (snippets.length !== 0) { %>
 
     <table class="snippets-table">
@@ -20,7 +32,7 @@
             <% snippets.forEach(function(snippet) { %>
                 <tr>
                     <td><%= snippet.title %></td>
-                    <td class="snippet-content"><%= snippet.content %></td>
+                    <td class="snippet-content"><pre><%= snippet.content %></pre></td>
                     <% if (user) { %>
                         <td class="snippet-actions">
                             <% if (snippet.user._id.toString() === user._id.toString()) { %>

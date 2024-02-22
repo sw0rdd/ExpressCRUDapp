@@ -174,3 +174,23 @@ form {
     border-radius: 5px;
     text-align: center;
 }
+
+
+
+.snippet-alert {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.delete-alert {
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
