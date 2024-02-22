@@ -6,8 +6,25 @@
         <% } else { %>
             <h1>Welcome to Snippet Manager!</h1>
         <% } %>
-
     </header>
+
+    <div class="login-out-actions">
+        <% if (!user) { %>
+            <div class="register-button corner-button">
+                <a href="/users/register">Register</a>
+            </div>
+
+            <div class="login-button corner-button" >
+                <a href="/users/login">Login</a>
+
+            </div>
+            
+            <% } else { %>
+                <div class="logout-button corner-button">
+                    <a href="/users/logout">Logout</a>
+                </div>
+        <% } %>
+    </div>
 
 
 </div>
@@ -17,12 +34,6 @@
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/snippets">Snippets</a></li>
-        <% if (!user) { %>
-            <li><a href="/users/register">Register</a></li>
-            <li><a href="/users/login">Login</a></li>
-        <% } else { %>
-            <li><a href="/users/logout">Logout</a></li>
-        <% } %>
     </ul>
 </nav>
 

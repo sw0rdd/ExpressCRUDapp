@@ -1,19 +1,20 @@
 import Snippet from '../model/snippet.js'
 
 /**
- * show all snippets
+ * show all snippets, fetch from database, oldest first
  * @param {object} req - request object
  * @param {object} res - response object
  */
 export const getAllSnippets = async (req, res) => {
   try {
-    const snippets = await Snippet.find().populate('user', 'username')
-    res.render('snippets/index', { snippets })
+    const snippets = await Snippet.find().sort({ createdAt: -1 }).populate('user', 'username');
+    res.render('snippets/index', { snippets, user: req.session.user });
   } catch (error) {
-    console.error('Error fetching snippets: ', error)
-    res.status(500).send('Internal server error')
+    console.error('Error fetching snippets:', error);
+    req.flash('error', 'Error fetching snippets.');
+    res.redirect('/');
   }
-}
+};
 
 /**
  * display form to create a new snippet

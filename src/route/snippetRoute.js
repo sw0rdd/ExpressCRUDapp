@@ -11,10 +11,11 @@ const snippetRouter = express.Router()
  * @param {object} req - request object
  * @param {object} res - response object
  * @param {Function} next - next function
+ * @returns {Function} - next function
  */
 function isAuthenticated (req, res, next) {
   if (req.session.user) {
-    next()
+    return next()
   }
   res.status(403).send('You are not authorized to access this page FORBIDDEN')
 }

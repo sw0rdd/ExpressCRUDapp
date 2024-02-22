@@ -1,3 +1,9 @@
+<% if (user) { %>
+    <div class="create-button">
+        <a href="/snippets/create" class="create-snippet-btn">Create New Snippet</a>
+    </div>
+<% } %>
+
 <% if (snippets.length !== 0) { %>
 
     <table class="snippets-table">
@@ -15,7 +21,6 @@
                 <tr>
                     <td><%= snippet.title %></td>
                     <td class="snippet-content"><%= snippet.content %></td>
-                    <!-- Conditionally display Snippet Actions if a user is logged in -->
                     <% if (user) { %>
                         <td class="snippet-actions">
                             <% if (snippet.user._id.toString() === user._id.toString()) { %>
@@ -42,8 +47,3 @@
         </div>
         <% } %>
 
-<% if (user) { %>
-    <div class="create-button">
-        <a href="/snippets/create" class="create-snippet-btn">Create New Snippet</a>
-    </div>
-<% } %>

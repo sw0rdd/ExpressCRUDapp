@@ -19,9 +19,9 @@
 }
 
 .create-button {
-    margin: 10px;
+    margin-top: 15px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .create-button a {

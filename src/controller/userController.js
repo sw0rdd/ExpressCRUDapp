@@ -34,7 +34,7 @@ export const handleRegister = async (req, res) => {
         req.flash('error', 'An error occurred during registration.')
         return res.redirect('/users/register')
       }
-      res.redirect('/') // Redirect to the homepage or dashboard
+      res.redirect('/snippets') 
     })
   } catch (error) {
     if (error.code === 11000) {
@@ -101,6 +101,6 @@ export const handleLogin = async (req, res) => {
  */
 export const logout = (req, res) => {
   req.session.destroy(() => {
-    res.redirect('/')
+    res.redirect('/users/login')
   })
 }

@@ -18,6 +18,8 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    "jsdoc/require-returns": "off",
+    "jsdoc/require-returns-check": "off"
   },
   ignorePatterns: [
     'build/',
