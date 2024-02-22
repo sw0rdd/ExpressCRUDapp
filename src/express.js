@@ -23,13 +23,13 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use(session({
   cookie: {
-    maxAge: 86400000, 
-    secure: false, 
-    httpOnly: true 
+    maxAge: 86400000,
+    secure: false,
+    httpOnly: true
   },
-  resave: false, 
-  saveUninitialized: false, 
-  secret: 'keyboard cat' 
+  resave: false,
+  saveUninitialized: false,
+  secret: 'keyboard cat'
 }))
 
 app.use(flash())

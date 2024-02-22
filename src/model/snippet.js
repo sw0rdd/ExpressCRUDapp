@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
 
-
 // Define the snippet schema
 const snippetSchema = new mongoose.Schema({
   title: {
