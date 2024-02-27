@@ -32,7 +32,9 @@
             <% snippets.forEach(function(snippet) { %>
                 <tr>
                     <td><%= snippet.title %></td>
-                    <td class="snippet-content"><pre><%= snippet.content %></pre></td>
+                    <!-- <td class="snippet-content"><pre><%= snippet.content %></pre></td> -->
+                    <td class="snippet-content"><pre><code class="language-javascript"><%= snippet.content %></code></pre></td>
+
                     <% if (user) { %>
                         <td class="snippet-actions">
                             <% if (snippet.user._id.toString() === user._id.toString()) { %>

@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="/css/snippets.css">
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" type="text/css" href="/css/register.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+
+
     <title>B2-Crud</title>
 </head>
 <body>
@@ -15,5 +20,7 @@
         <%- body %>
     </div>
     <%- include('../partials/footer.ejs')%>
+
+    <script>hljs.highlightAll();</script>
 </body>
 </html>
