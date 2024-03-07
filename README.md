@@ -16,8 +16,8 @@ This B2 CRUD application is designed to demonstrate basic Create, Read, Update, 
 ### Clone the repo 
 
 ```
-git clone git@gitlab.lnu.se:1dv528/student/sy222ea/b2-crud.git
-cd b2-crud
+git clone git@github.com:sw0rdd/ExpressCRUDapp.git
+cd ExpressCRUDapp
 ```
 <br>
 
