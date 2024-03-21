@@ -1,7 +1,7 @@
-# B2 CRUD
+# Express CRUD App
 
 ## Description
-This B2 CRUD application is designed to demonstrate basic Create, Read, Update, and Delete (CRUD) operations using Node.js, Express, and MongoDB. It serves as an assignment submission for course 1DV528 at Linnaeus University.
+This B2 CRUD application is designed to demonstrate basic Create, Read, Update, and Delete (CRUD) operations using Node.js, Express, and MongoDB. It serves as an assignment submission for a web programming course at Linnaeus University.
 
 
 ## Instructions and Usage
