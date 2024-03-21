@@ -1,5 +1,5 @@
 {
-  "name": "b2-crud",
+  "name": "ExpressCRUDapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,10 +23,6 @@
     "test": "npm run lint",
     "clean": "rm -rf build/",
     "clean-all": "npm run clean && rm -rf node_modules/ && rm -f package-lock.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.lnu.se:1dv528/student/sy222ea/b2-crud.git"
   },
   "keywords": [],
   "author": "Seif-Alamir Yousef",
